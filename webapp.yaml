@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: webapp
-          image: xdarkn/taskapp:lironhomo
+          image: xdarkn/taskapp
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 5000
