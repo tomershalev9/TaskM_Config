@@ -9,7 +9,7 @@ on:
 
 jobs:
   Build-Push:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     name: build example and deploy to minikube
     steps:
       - name: clone application from github repo.
