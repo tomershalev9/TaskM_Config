@@ -1,4 +1,4 @@
-name: build-test-push workflow
+name: build-test-push-workflow
 on:
   push:
     branches:
