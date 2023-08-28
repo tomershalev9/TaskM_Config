@@ -50,9 +50,7 @@ jobs:
           kubectl get pods
           minikube service webapp-svc --url
           echo "-----------------opening the service-----------------"
-          curl $(minikube service webapp-svc --url)
-          curl -X POST -d "{\"task\": \"Task1\"}" $(minikube service webapp-svc --url)/task
-          curl $(minikube service webapp-svc --url)/tasks
+          
       - name: Docker Login
         uses: docker/login-action@v2
         with:
