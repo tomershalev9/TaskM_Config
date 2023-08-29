@@ -6,6 +6,6 @@ spec:
   selector:
     app: webapp
   ports:
-    - port: 8080
+    - port: 8085
       targetPort: 5000
   type: LoadBalancer
