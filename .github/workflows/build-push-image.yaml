@@ -51,7 +51,7 @@ jobs:
           kubectl apply -f webapp.yaml
           kubectl apply -f webapp-svc.yaml
       - name: Take a nap
-        run: sleep 50
+        run: sleep 30
       - name: Test service URLs
         run: |
           docker images
