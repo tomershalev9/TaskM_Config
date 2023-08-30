@@ -48,8 +48,8 @@ jobs:
           kubectl apply -f mongo-svc.yaml
           kubectl apply -f mongo-pv.yaml
           kubectl apply -f mongo-pvc.yaml
-          kubectl apply -f webapp.yaml
-          kubectl apply -f webapp-svc.yaml
+          kubectl apply -f taskapp.yaml
+          kubectl apply -f taskapp-svc.yaml
       - name: Take a nap
         run: sleep 50
       - name: Test service URLs
