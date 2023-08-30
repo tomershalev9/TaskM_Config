@@ -57,7 +57,7 @@ jobs:
           docker images
           minikube service list
           kubectl get pods
-          minikube service webapp-svc --url
+          minikube service tasksapp-svc --url
           echo "-----------------opening the service-----------------"
           
       - name: docker push
