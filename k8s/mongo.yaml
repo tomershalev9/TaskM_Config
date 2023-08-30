@@ -11,9 +11,8 @@ spec:
       labels:
         app: mongo
     spec:
-      hostname: taskm-app-db-1  # Set the hostname for the pod
       containers:
-        - name: taskm-app-db-1
+        - name: mongo
           image: mongo
           ports:
             - containerPort: 27017
@@ -24,4 +23,3 @@ spec:
         - name: storage
           persistentVolumeClaim:
             claimName: mongo-pvc
-
