@@ -91,7 +91,13 @@ jobs:
       #     git commit -m "Update image tag in k8s/taskapp.yaml"
       #     git push origin main
   
-      - uses: mikeal/publish-to-github-action@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.ACTIONS_KEY }}
-          BRANCH_NAME: 'main'
+      # - uses: mikeal/publish-to-github-action@master
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.ACTIONS_KEY }}
+      #     BRANCH_NAME: 'main'
+
+
+      - name: Commit & Push changes
+        uses: actions-js/push@master
+        with:
+         github_token: ${{ secrets.ACTIONS_KEY }}
