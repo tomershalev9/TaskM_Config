@@ -36,29 +36,29 @@ jobs:
       - name: checkout
         uses: actions/checkout@v3
 
-      - name: Start minikube
-        uses: medyagh/setup-minikube@master
+      # - name: Start minikube
+      #   uses: medyagh/setup-minikube@master
 
-      - name: Try the cluster !
-        run: kubectl get pods -A        
-      - name: Deploy to minikube
-        run: |
-          cd k8s
-          kubectl apply -f mongo.yaml
-          kubectl apply -f mongo-svc.yaml
-          kubectl apply -f mongo-pv.yaml
-          kubectl apply -f mongo-pvc.yaml
-          kubectl apply -f taskapp.yaml
-          kubectl apply -f taskapp-svc.yaml
-      - name: Take a nap
-        run: sleep 50
-      - name: Test service URLs
-        run: |
-          docker images
-          minikube service list
-          kubectl get pods
-          minikube service tasksapp-svc --url
-          echo "-----------------opening the service-----------------"
+      # - name: Try the cluster !
+      #   run: kubectl get pods -A        
+      # - name: Deploy to minikube
+      #   run: |
+      #     cd k8s
+      #     kubectl apply -f mongo.yaml
+      #     kubectl apply -f mongo-svc.yaml
+      #     kubectl apply -f mongo-pv.yaml
+      #     kubectl apply -f mongo-pvc.yaml
+      #     kubectl apply -f taskapp.yaml
+      #     kubectl apply -f taskapp-svc.yaml
+      # - name: Take a nap
+      #   run: sleep 50
+      # - name: Test service URLs
+      #   run: |
+      #     docker images
+      #     minikube service list
+      #     kubectl get pods
+      #     minikube service tasksapp-svc --url
+      #     echo "-----------------opening the service-----------------"
           
       - name: docker push
         run: |
