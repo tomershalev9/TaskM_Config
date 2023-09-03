@@ -6,7 +6,8 @@ on:
   repository_dispatch:
     types:
     - trigger-config
-
+permissions:
+    contents: write
 jobs:
   Build-Push:
     runs-on: ubuntu-20.04
