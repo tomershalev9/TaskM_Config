@@ -80,5 +80,5 @@ jobs:
           commit-message: 'publish'
           force-add: 'true'
           files: k8s/taskapp.yaml
-          name: Ziv
+          name: Tomer
           email: tomershalev9@gmail.com
