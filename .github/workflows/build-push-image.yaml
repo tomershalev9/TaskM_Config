@@ -79,6 +79,6 @@ jobs:
           push-branch: 'main'
           commit-message: 'publish'
           force-add: 'true'
-          files: taskapp.yaml
+          files: k8s/taskapp.yaml
           name: Ziv
           email: tomershalev9@gmail.com
