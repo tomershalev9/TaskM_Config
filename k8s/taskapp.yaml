@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: tasksapp
-          image: xdarkn/taskapp:latest
+          image: xdarkn/taskapp:v1.0.6064239647
           ports:
             - containerPort: 5000
           imagePullPolicy: Always
