@@ -72,13 +72,22 @@ jobs:
 
 
 
-      - name: push to github
-        uses: github-actions-x/commit@v2.9
-        with:
-          github-token: ${{ secrets.ACTIONS_KEY }}
-          push-branch: 'main'
-          commit-message: 'publish'
-          force-add: 'true'
-          files: k8s/taskapp.yaml
-          name: Tomer
-          email: tomershalev9@gmail.com
+      # - name: push to github
+      #   uses: github-actions-x/commit@v2.9
+      #   with:
+      #     github-token: ${{ secrets.ACTIONS_KEY }}
+      #     push-branch: 'main'
+      #     commit-message: 'publish'
+      #     force-add: 'true'
+      #     files: k8s/taskapp.yaml
+      #     name: Tomer
+      #     email: tomershalev9@gmail.com
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.email "${{ secrets.GIT_USER_EMAIL }}"
+          git config --global user.name "${{ secrets.GIT_USER_NAME }}"
+          git add k8s/taskapp.yaml
+          git commit -m "Update image tag in k8s/taskapp.yaml"
+          git push origin main
+  
