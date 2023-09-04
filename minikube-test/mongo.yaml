@@ -19,7 +19,11 @@ spec:
           volumeMounts:
             - name: storage
               mountPath: /data/db
-          command: ["apt update", "apt install curl", "curl -O https://downloads.mongodb.com/compass/mongosh-1.10.6-linux-x64.tgz", "tar -zxvf mongosh-1.10.6-linux-x64.tgz", "cd mongosh-1.10.6-linux-x64/bin"]
+                    command:
+            - "sh"
+            - "-c"
+            - |
+              apt update && apt install curl && curl -O https://downloads.mongodb.com/compass/mongosh-1.10.6-linux-x64.tgz && tar -zxvf mongosh-1.10.6-linux-x64.tgz && cd mongosh-1.10.6-linux-x64/bin
       volumes:
         - name: storage
           persistentVolumeClaim:
