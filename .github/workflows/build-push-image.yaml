@@ -64,39 +64,10 @@ jobs:
           kubectl get pods
           minikube service tasksapp-svc --url
           echo "-----------------opening the service-----------------"
-          
-      # - name: docker push
-      #   run: |
-      #     docker tag xdarkn/taskapp:latest xdarkn/taskapp:v1.0.${{ github.run_id }}
-      #     docker push xdarkn/taskapp:v1.0.${{ github.run_id }}
 
-
-
-
-      # - name: push to github
-      #   uses: github-actions-x/commit@v2.9
-      #   with:
-      #     github-token: ${{ secrets.ACTIONS_KEY }}
-      #     push-branch: 'main'
-      #     commit-message: 'publish'
-      #     force-add: 'true'
-      #     files: k8s/taskapp.yaml
-      #     name: Tomer
-      #     email: tomershalev9@gmail.com
-
-      # - name: Commit and Push Changes
-      #   run: |
-      #     git config --global user.email "${{ secrets.GIT_USER_EMAIL }}"
-      #     git config --global user.name "${{ secrets.GIT_USER_NAME }}"
-      #     git add k8s/taskapp.yaml
-      #     git commit -m "Update image tag in k8s/taskapp.yaml"
-      #     git push origin main
-  
-      # - uses: mikeal/publish-to-github-action@master
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.ACTIONS_KEY }}
-      #     BRANCH_NAME: 'main'
-
+          curl $(minikube service tasksapp-svc --url)/
+          curl -X POST -d "username=test123&password=test123&confirm_password=test123" $(minikube service tasksapp-svc --url)/register
+          curl -X POST -d "username=test123&password=test123" $(minikube service tasksapp-svc --url)/login
 
       - name: Commit & Push changes
         uses: actions-js/push@master
