@@ -26,7 +26,7 @@ kubectl apply application.yaml
 
 port-forward the svc - kubectl port-forward svc/prometheus-operated 9090:9090 -n monitoring
 
-                       kubectl port-forward svc/prometheus-grafana 9091:80 -n monitoring
+                       kubectl port-forward svc/kube-prometheus-stackr-grafana 9091:80 -n monitoring
 
                     grafana username and password:
                     user: admin
