@@ -16,7 +16,7 @@ jobs:
       - name: clone application from github repo.
         uses: sudosubin/git-clone-action@v1.0.1
         with:
-          repository: 'xDarkN/TaskM_App'
+          repository: 'tomershalev9/TaskM_App'
           platform: 'github'
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
