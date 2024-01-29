@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/xDarkN/TaskM_Config.git
+    repoURL: https://github.com/tomershalev9/TaskM_Config.git
     targetRevision: HEAD
     path: k8s
   destination:
