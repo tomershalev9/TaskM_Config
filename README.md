@@ -20,7 +20,7 @@
 6. deploy this yaml in argocd:
 
 kubectl apply application.yaml
-
+kubectl port-forward svc/tasksapp-svc 8080:8080 -n taskapp
 
 7. deploy prometheus-setup terraform init/apply
 
